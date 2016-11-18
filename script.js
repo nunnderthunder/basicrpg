@@ -5,6 +5,10 @@ canvas.width = 800;
 canvas.height = 600;
 document.body.appendChild(canvas);
 
+//for monster movement
+var rightdir = true;
+
+
 // Background image
 var bgReady = false;
 var bgImage = new Image();
@@ -45,7 +49,9 @@ var hero = {
 
 var sword = {};
 
-var monster = {};
+var monster = {
+	speed: 10
+};
 var monstersSlain = 0;
 
 // Handle keyboard controls
@@ -67,6 +73,7 @@ var reset = function () {
 	// Throw the monster somewhere on the screen randomly
 	monster.x = 32 + (Math.random() * (canvas.width - 64));
 	monster.y = 32 + (Math.random() * (canvas.height - 64));
+	
 };
 
 // Update game objects
@@ -92,22 +99,18 @@ var update = function (modifier) {
 		heroImage.src = "images/heroright.png";
 	}
 
-
-//Spacebar to execute swordswing based on last directional key pressed	
-/*
-	if (32 in keysDown && hero.direction = "up") {
-
-	}
-	if else (32 in keysDown && hero.direction = "down") {
-
-	}
-	if else (32 in keysDown && hero.direction = "left") {
-
-	}
-	if else (32 in keysDown && hero.direction = "right"){
-
-	}
-*/
+	//Movement for the monster after it spawns
+	if(monster.x <= 770 && rightdir){
+        monster.x += 4;
+      
+    }
+    else if(monster.x >= 770||!rightdir ){
+      rightdir = false;
+      monster.x -= 4;
+    
+      if (monster.x <= 10) rightdir = true;
+      
+    }
 
 	// Are they touching?
 	if (
@@ -122,6 +125,7 @@ var update = function (modifier) {
 		reset();
 	}
 };
+
 
 // Draw everything
 var render = function () {
@@ -153,6 +157,7 @@ var main = function () {
 	
 	update(delta / 1000);
 	render(); 
+	
 
 	then = now;
 
