@@ -2,17 +2,34 @@
 <html>
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
 	</head>
-	<title>Basic RPG</title>
+	<title>Blob Slayer</title>
 
 </head>
 
 <body>
-<script src="script.js"></script>
-<script src="animatesprite.js"></script>
-<div class ="dude">
+<div id ="SplashScreen">
+<h1>Blob Slayer</h1>
+<input id = "StartButton" type = "button" class = "btn btn-success btn-lg" value ="Start Game"/>
 </div>
+
+
+<canvas id ="canvas" style = "display: none;"></canvas>
+<script>
+$("#StartButton").click(function() {
+	$("#SplashScreen").hide();
+	$("#canvas").show();
+});
+</script>
+
+<script src="script.js"></script>
 </body>
 </html>
+
+
 
 

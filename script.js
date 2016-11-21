@@ -1,5 +1,5 @@
 // Create the canvas
-var canvas = document.createElement("canvas");
+var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 canvas.width = 800;
 canvas.height = 600;
@@ -8,6 +8,12 @@ document.body.appendChild(canvas);
 //for monster movement
 var rightdir = true;
 
+//For hiding the main canvas to show a start menu
+canvas.style.visibility="hidden";
+
+document.getElementById("StartButton").onclick=function (){
+	canvas.style.visibility="visible";
+}
 
 // Background image
 var bgReady = false;
@@ -25,13 +31,6 @@ heroImage.onload = function () {
 };
 heroImage.src = "images/hero.png";
 
-// Sword image
-var swordReady = false;
-var swordImage = new Image();
-swordImage.onload = function () {
-	swordReady = true;
-};
-swordImage.src = "images/sworddown.png";
 
 // Monster image
 var monsterReady = false;
@@ -40,6 +39,23 @@ monsterImage.onload = function () {
 	monsterReady = true;
 };
 monsterImage.src = "images/monster.png";
+
+
+
+//Audio Loop 
+myAudio = new Audio('boss.mp3'); 
+if (typeof myAudio.loop == 'boolean')
+{
+    myAudio.loop = true;
+}
+else
+{
+    myAudio.addEventListener('ended', function() {
+        this.currentTime = 0;
+        this.play();
+    }, false);
+}
+myAudio.play();
 
 // Game objects
 var hero = {
@@ -65,12 +81,12 @@ addEventListener("keyup", function (e) {
 	delete keysDown[e.keyCode];
 }, false);
 
-// Reset the game when the player catches a monster
+// Resets the game after the hero object collides with the monster object
 var reset = function () {
 	hero.x = canvas.width / 2;
 	hero.y = canvas.height / 2;
 
-	// Throw the monster somewhere on the screen randomly
+	// Randomly spawn a monster on the canvas
 	monster.x = 32 + (Math.random() * (canvas.width - 64));
 	monster.y = 32 + (Math.random() * (canvas.height - 64));
 	
@@ -112,6 +128,8 @@ var update = function (modifier) {
       
     }
 
+
+
 	// Are they touching?
 	if (
 		hero.x <= (monster.x + 32) 
@@ -141,7 +159,8 @@ var render = function () {
 		ctx.drawImage(monsterImage, monster.x, monster.y);
 	}
 
-	// Score
+
+	// Scoreboard
 	ctx.fillStyle = "rgb(250, 250, 250)";
 	ctx.font = "24px Helvetica";
 	ctx.textAlign = "left";
@@ -153,7 +172,6 @@ var render = function () {
 var main = function () {
 	var now = Date.now();
 	var delta = now - then;
-
 	
 	update(delta / 1000);
 	render(); 
@@ -164,6 +182,8 @@ var main = function () {
 	// Request to do this again ASAP
 	requestAnimationFrame(main);
 };
+
+
 
 // Cross-browser support for requestAnimationFrame
 var w = window;
