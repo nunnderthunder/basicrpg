@@ -2,7 +2,7 @@
 	text-align: center;
 	padding: 0;
 	margin: 0;
-	background-color: rgba(60, 60, 0, .2);
+	
 }
 
 #StartButton {
@@ -14,11 +14,12 @@ h1 {
 	font-family: 'Press Start 2P', cursive;
 	margin-top: 150px;
 	font-size: 64px;
-	
+
 }
 
 
 body {
+	background-color: rgba(60, 60, 0, .2);
 	margin: 0	!important;
 	padding: 0	!important;
 }
