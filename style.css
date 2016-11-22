@@ -24,6 +24,21 @@ body {
 	padding: 0	!important;
 }
 
+h2 {
+	font-family: 'Press Start 2P', cursive;
+	margin-top: 80px;
+	margin-bottom: 40px;
+}
+
+ul {
+	font-family: 'Press Start 2P', cursive;
+}
+
+li {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
 
 
 
