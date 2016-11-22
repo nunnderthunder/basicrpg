@@ -18,8 +18,13 @@ http://blob-slayer-project1-wdi8.bitballoon.com/
 * HTML
 
 # Hosting
-* bitballoon
-* github
+* Bitballoon
+
+# Tools
+* Sublime Text Editor 3
+* Git/Github
+* Trello
+
 
 # 
 
