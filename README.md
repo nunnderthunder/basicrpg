@@ -2,7 +2,8 @@
 Project 1, an html canvas game for WDI8 at General Assembly.
 
 # Where to play it
-[](http://blob-slayer-project1-wdi8.bitballoon.com/)
+
+http://blob-slayer-project1-wdi8.bitballoon.com/
 
 # How to Play
 * Up arrow key: Move character up in the arena.
