@@ -1,12 +1,25 @@
 # Blob Slayer
 Project 1, an html canvas game for WDI8 at General Assembly.
 
-#Installation
+# Installation
 Simply downloading all the files and opening the index.html in your browser should pull the game up.
 
-#How to Play
-Using the arrow keys to move the hero, chase down and collide into the blobs to slay them, 
-once defeated another will respawn, see what your high score will be!
+# How to Play
+* Up arrow key: Move character up in the arena
+* Down arrow key: Move character down in the arena
+* Left arrow key: Move character left in the arena
+* Right arrow key: Move character right in the arena
+
+# Technologies Used
+## Languages
+* Javascript
+* HTML
+* CSS
+### Libraries
+* Jquery
+* Bootstrap
+### Hosting
+* Bitballoon
 
 #Screenshot
 
