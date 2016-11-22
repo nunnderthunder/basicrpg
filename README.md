@@ -9,4 +9,4 @@ Using the arrow keys to move the hero, chase down and collide into the blobs to 
 once defeated another will respawn, see what your high score will be!
 
 #Screenshot
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/BPce5"><a href="//imgur.com/BPce5"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+http://imgur.com/a/BPce5
