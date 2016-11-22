@@ -11,17 +11,13 @@ Simply downloading all the files and opening the index.html in your browser shou
 * Right arrow key: Move character right in the arena
 
 # Technologies Used
-## Languages
-* Javascript
-* HTML
+* JavaScript
 * CSS
-### Libraries
-* Jquery
-* Bootstrap
-### Hosting
-* Bitballoon
+* HTML
 
-#Screenshot
+# Hosting
+* bitballoon
+* github
 
 ![](http://i.imgur.com/CmT8Dcy.png)
 
